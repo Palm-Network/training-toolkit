@@ -4,7 +4,16 @@ const contract = require("../artifacts/contracts/NFT.sol/NFT.json");
 const contractInterface = contract.abi;
 
 // https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html#provider-object
+
 let provider = ethers.provider;
+
+const addressArray = [
+  "0xE8D858A05631879C3089f1F5d8b5A288138B7E8B",
+  "0xE4747303F9a12F5B13a4Ba6dbf55d651844Da02F",
+  "0x84682175EF15bEB1741Afb4D7c01223dA1A6AB02",
+  "0xa6111182bFF41d0EfecADF11Da0289D1c3f120ba",
+  "0x78dCcE1ca3841755177B56F647728Cd65D5Ca9Eb",
+];
 
 const tokenURIArray = [
   "https://bafkreid62y6ghstiw45ri6lckw3wvcjyfj6ufggt7xrkumf4mnv7zd5lki.ipfs.dweb.link/",
@@ -40,6 +49,8 @@ const NFT = new ethers.Contract(
   contractInterface,
   signer
 );
+const randomAddress =
+  addressArray[Math.floor(Math.random() * addressArray.length)];
 
 let mint = NFT.mintNFT;
 function txSender(tokenURIArray, mint) {
@@ -48,13 +59,13 @@ function txSender(tokenURIArray, mint) {
     if (i >= tokenURIArray.length) {
       return;
     }
-    let newTx = Promise.resolve(mint(process.env.PUBLIC_KEY, tokenURIArray[i]));
+    let newTx = Promise.resolve(mint(randomAddress, tokenURIArray[i]));
     i++;
     return newTx
       .then((tx) => tx.wait(1))
       .then((receipt) =>
         console.log(
-          `Your transaction is confirmed, its receipt is: ${receipt.transactionHash}`
+          `Mint transaction ${i} out of ${tokenURIArray.length} is confirmed, its receipt is: ${receipt.transactionHash}`
         )
       )
       .then(nextTx);
@@ -63,7 +74,7 @@ function txSender(tokenURIArray, mint) {
 }
 
 const main = () => {
-  console.log("Waiting 5 blocks for each mint confirmation...");
+  console.log("Waiting 1 block for each mint confirmation...");
   txSender(tokenURIArray, mint).catch((e) =>
     console.log("something went wrong", e)
   );
