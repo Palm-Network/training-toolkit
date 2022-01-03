@@ -1,19 +1,19 @@
 {
-    description: "alphabet",
-    image: "https://bafkreiaaipxttcfgysk2to3k6pue6i5axftlvkgv3mz3ai4qdmknkejude.ipfs.dweb.link/",
-    name: "letter #15",
-    attributes: [
+    "description": "alphabet",
+    "image": "https://bafkreiaaipxttcfgysk2to3k6pue6i5axftlvkgv3mz3ai4qdmknkejude.ipfs.dweb.link/",
+    "name": "letter #15",
+    "attributes": [
         {
-            trait_type: "Background",
-            value: "Grey"
+            "trait_type": "Background",
+            "value": "Grey"
         },
         {
-            trait_type: "Letter color",
-            value: "Blue"
+            "trait_type": "Letter color",
+            "value": "Blue"
         },
         {
-            trait_type: "3D",
-            value: "Yes"
+            "trait_type": "3D",
+            "value": "Yes"
         }
     ]
 }
