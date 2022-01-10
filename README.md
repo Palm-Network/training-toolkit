@@ -39,3 +39,7 @@ CONTRACT_ADDRESS
         
         npx hardhat run scripts/mint.js --network palm_mainnet
         
+
+#### Bulk Mint NFT on Palm testnet:
+        
+        npx hardhat run scripts/bulk-mint.js --network palm_mainnet
