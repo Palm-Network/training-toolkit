@@ -21,10 +21,10 @@ const NFT = new ethers.Contract(
 );
 
 const main = () => {
-  console.log("Waiting 5 blocks for confirmation...");
+  console.log("Waiting 1 blocks for confirmation...");
   NFT
     .mintNFT(process.env.PUBLIC_KEY, tokenURI)    
-    .then((tx) => tx.wait(5))
+    .then((tx) => tx.wait(1))
     .then((receipt) => console.log(`Your transaction is confirmed, its receipt is: ${receipt.transactionHash}`))
 
     .catch((e) => console.log("something went wrong", e));

@@ -33,10 +33,6 @@ const tokenURIArray = [
   "https://bafkreifkupbmxozavwdukqjkqjy7ht26wnmggdnf4mvrlq7hwg4odibdti.ipfs.dweb.link/",
 ];
 
-// let bulkMint = (tokenURI)=> {
-//   tokenURI.forEach(mintNFT(process.env.PUBLIC_KEY, tokenURI));
-// }
-
 const privateKey = `0x${process.env.PRIVATE_KEY}`;
 const wallet = new ethers.Wallet(privateKey);
 
@@ -49,17 +45,18 @@ const NFT = new ethers.Contract(
   contractInterface,
   signer
 );
-const randomAddress =
-  addressArray[Math.floor(Math.random() * addressArray.length)];
+const mint = NFT.mintNFT;
+const random = function () {
+  return Math.floor(Math.random() * addressArray.length);
+};
 
-let mint = NFT.mintNFT;
 function txSender(tokenURIArray, mint) {
   let i = 0;
   let nextTx = function () {
     if (i >= tokenURIArray.length) {
       return;
     }
-    let newTx = Promise.resolve(mint(randomAddress, tokenURIArray[i]));
+    let newTx = Promise.resolve(mint(addressArray[random()], tokenURIArray[i]));
     i++;
     return newTx
       .then((tx) => tx.wait(1))
