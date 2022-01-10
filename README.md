@@ -1,4 +1,4 @@
-# Training material: How to deploy an ERC721 contract and mint an NFT on Palm
+# Getting started with the Palm network: Training toolkit
 
 Training code for Palm documentation. This repo aims at supporting those learning how to deploy an NFT contract and mint an NFT on Palm using `Hardhat` and `Ethers.js`
 
