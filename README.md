@@ -14,10 +14,10 @@ and at:
 ### Configuration
 
 Add an `.env` file matching the variables found in `hardhat.config.js`:
-INFURA_PROJECT_ID
-PRIVATE_KEY
-PUBLIC_KEY
-CONTRACT_ADDRESS
+* INFURA_PROJECT_ID
+* PRIVATE_KEY
+* PUBLIC_KEY
+* CONTRACT_ADDRESS
 
 ### Usage
 
