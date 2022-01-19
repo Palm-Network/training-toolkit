@@ -23,32 +23,22 @@ Add an `.env` file matching the variables found in `hardhat.config.js`:
 
 #### Deploy contract to Palm Testnet:
         
-        ```bash
         npx hardhat run scripts/deploy.js --network palm_testnet
-        ```
 
 #### Deploy contract to Palm Mainnet:
 
-        ```bash
         npx hardhat run scripts/deploy.js --network palm_mainnet
-        ```
         
 #### Mint NFT on Palm Testnet:
 
-        ```bash
         npx hardhat run scripts/mint.js --network palm_testnet
-        ```
         
 
 #### Mint NFT on Palm Mainnet:
 
-        ```bash
         npx hardhat run scripts/mint.js --network palm_mainnet
-        ```
         
 
 #### Bulk Mint NFT on Palm testnet:
 
-        ```bash
         npx hardhat run scripts/bulk-mint.js --network palm_mainnet
-        ```
