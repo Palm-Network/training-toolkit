@@ -1,4 +1,4 @@
-# Getting started with the Palm network: Training toolkit
+# Getting started with the Palm Network: Training toolkit
 
 Training code for Palm documentation. This repo aims at supporting those learning how to deploy an NFT contract and mint an NFT on Palm using `Hardhat` and `Ethers.js`
 
@@ -42,3 +42,4 @@ Add an `.env` file matching the variables found in `hardhat.config.js`:
 #### Bulk Mint NFT on Palm testnet:
 
         npx hardhat run scripts/bulk-mint.js --network palm_mainnet
+        ```
