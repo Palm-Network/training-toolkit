@@ -40,12 +40,12 @@ wallet.provider = provider;
 const signer = wallet.connect(provider);
 
 // https://docs.ethers.io/v5/api/contract/contract
-const NFT = new ethers.Contract(
+const nft = new ethers.Contract(
   process.env.CONTRACT_ADDRESS,
   contractInterface,
   signer
 );
-const mint = NFT.mintNFT;
+const mint = nft.mintNFT;
 const random = function () {
   return Math.floor(Math.random() * addressArray.length);
 };
